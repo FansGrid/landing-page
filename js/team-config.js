@@ -20,7 +20,7 @@ window.FANSGRID_TEAM = [
     name: "Sergio León Doncel",
     role: "Desarrollo y validación",
     bio: "Ingeniero de Software Embebido",
-    linkedin: "https://www.linkedin.com/in/",
+    linkedin: "https://www.linkedin.com/in/sldoncel",
     avatar: ""
   },
   {
