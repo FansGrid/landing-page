@@ -107,32 +107,36 @@ function initCopyEmail() {
 }
 
 /* -------------------------------------------------------------------------
- * Vídeos: autoplay nativo, con respaldo por si el navegador lo bloquea
+ * Vídeos: se reproducen al entrar en pantalla. Si el navegador lo bloquea
+ * (autoplay restrictivo), se muestran los controles para poder arrancarlos.
  * ------------------------------------------------------------------------- */
 function initLazyVideos() {
   const videos = document.querySelectorAll('.lazy-video');
   if (!videos.length) return;
 
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reduceMotion) {
-    videos.forEach((video) => { video.removeAttribute('autoplay'); video.pause(); });
+  if (!('IntersectionObserver' in window)) {
+    videos.forEach(playVideo);
     return;
   }
 
-  if (!('IntersectionObserver' in window)) return;
-
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      const video = entry.target;
-      if (video.paused) {
-        const attempt = video.play();
-        if (attempt && typeof attempt.catch === 'function') attempt.catch(() => {});
-      }
+      if (entry.isIntersecting) playVideo(entry.target);
     });
   }, { rootMargin: '80px', threshold: 0.15 });
 
   videos.forEach((video) => observer.observe(video));
+}
+
+function playVideo(video) {
+  if (!video.paused) return;
+
+  video.muted = true;
+  const attempt = video.play();
+
+  if (attempt && typeof attempt.catch === 'function') {
+    attempt.catch(() => { video.controls = true; });
+  }
 }
 
 /* -------------------------------------------------------------------------
@@ -142,8 +146,10 @@ function initScrollGifs() {
   const images = document.querySelectorAll('.scroll-gif');
   if (!images.length) return;
 
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reduceMotion || !('IntersectionObserver' in window)) return;
+  if (!('IntersectionObserver' in window)) {
+    images.forEach((img) => { if (img.dataset.anim) img.src = img.dataset.anim; });
+    return;
+  }
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
