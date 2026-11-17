@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FANS GRID · Cada móvil del público es un píxel</title>
+
+  <meta name="description" content="FANS GRID es un proyecto innovador que convierte los móviles del público en una gran pantalla sincronizada en las gradas. Sin apps, sin hardware y sin residuos.">
+  <meta name="keywords" content="FANS GRID, estadio, pantallas sincronizadas, grada, coreografía luminosa, prototipo, Sevilla">
+  <meta name="author" content="FANS GRID">
+  <link rel="canonical" href="https://fans-grid.es/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://fans-grid.es/">
+  <meta property="og:title" content="FANS GRID · Cada móvil del público es un píxel">
+  <meta property="og:description" content="Miles de pantallas dibujan juntas una sola imagen en las gradas. Un proyecto innovador para el estadio del futuro.">
+  <meta property="og:image" content="assets/hero.webp">
+
+  <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Mona+Sans:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <!-- ========================= HEADER ========================= -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="#hero" class="brand" aria-label="FANS GRID, volver al inicio">
+        <img class="brand-wordmark" src="assets/fansgrid-wordmark.png" alt="" width="120" height="112">
+        <span class="brand-name">FANS <b>GRID</b></span>
+      </a>
+
+      <nav aria-label="Navegación principal">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#concepto">Idea</a></li>
+          <li><a href="#show">Funcionamiento</a></li>
+          <li><a href="#ventajas">Ventajas</a></li>
+          <li><a href="#consola">Control y monitorización</a></li>
+          <li><a href="#estadio">Modelado</a></li>
+          <li><a href="#equipo">Equipo</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <button class="mobile-toggle" id="mobile-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ========================= HERO ========================= -->
+    <section id="hero" class="hero">
+      <div class="hero-bg" aria-hidden="true">
+        <img src="assets/hero.webp" alt="">
+      </div>
+
+      <div class="container hero-content">
+        <span class="hero-brand">FANS <b>GRID</b></span>
+
+        <span class="pill"><span class="pulse-dot"></span> Prototipo en Desarrollo · Propuesta Real Betis Balompié</span>
+
+        <span class="hero-slogan">Mosaicos digitales</span>
+
+        <h1>Cada móvil del público es un píxel</h1>
+
+        <p class="hero-sub">
+          Solución plug &amp; play: despliegue de mosaicos digitales dinámicos para crear un evento luminoso colaborativo entre todos los espectadores que asisten al partido, y convertir el estadio en un ambiente y una experiencia de animación inolvidable.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#show" class="btn btn-primary">Ver el show</a>
+          <a href="#concepto" class="btn btn-secondary">Cómo funciona</a>
+        </div>
+
+        <div class="hero-stats" aria-label="Ideas clave del proyecto">
+          <div class="stat-cell">
+            <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="3" width="7" height="7" rx="1"></rect>
+              <rect x="14" y="3" width="7" height="7" rx="1"></rect>
+              <rect x="3" y="14" width="7" height="7" rx="1"></rect>
+              <rect x="14" y="14" width="3" height="3"></rect>
+              <rect x="18" y="18" width="3" height="3"></rect>
+            </svg>
+            <div class="stat-num">Sin apps</div>
+            <div class="stat-label">Abre con un QR</div>
+          </div>
+          <div class="stat-cell">
+            <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="7" width="18" height="12" rx="2"></rect>
+              <path d="M12 7V3"></path>
+              <path d="M8 3h8"></path>
+              <path d="M4 20L20 4"></path>
+            </svg>
+            <div class="stat-num">Sin instalar hardware</div>
+            <div class="stat-label">Ni nada que repartir</div>
+          </div>
+          <div class="stat-cell">
+            <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="9"></circle>
+              <path d="M12 7v5l3 2"></path>
+            </svg>
+            <div class="stat-num">Sincronización</div>
+            <div class="stat-label">De todos los dispositivos</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= IDEA ========================= -->
+    <section id="concepto" class="section-padding">
+      <div class="container">
+        <div class="section-head">
+          <span class="pill">IDEA</span>
+          <h2>De un QR a una grada encendida</h2>
+          <p>Cuatro pasos y la grada se convierte en una pantalla colectiva.</p>
+        </div>
+
+        <div class="steps-row">
+          <article class="step-card">
+            <div class="step-num">01</div>
+            <div class="step-shot">
+              <img src="assets/paso-1-bienvenida.webp" alt="Pantalla de inicio: Tu móvil es un píxel, con el botón Unirme al show" loading="lazy">
+            </div>
+            <h3>Entra al show</h3>
+            <p>Escanea el QR o abre el enlace. Es una web: no hay que instalar nada.</p>
+          </article>
+
+          <article class="step-card">
+            <div class="step-num">02</div>
+            <div class="step-shot">
+              <img src="assets/paso-2-zona.webp" alt="Pantalla para elegir la zona: Fondo o Preferencia, con la opción de continuar sin fila ni asiento" loading="lazy">
+            </div>
+            <h3>Elige tu zona</h3>
+            <p>Preferencia, Fondo, Gol Norte o Gol Sur. Solo eso: no pedimos fila ni asiento.</p>
+          </article>
+
+          <article class="step-card">
+            <div class="step-num">03</div>
+            <div class="step-shot">
+              <img src="assets/paso-3-preparacion.webp" alt="Pantalla de preparación: brillo al máximo, pantalla hacia el campo y no salir de la web" loading="lazy">
+            </div>
+            <h3>Prepara tu brillo</h3>
+            <p>Pantalla al máximo y mirando al campo. Mantén la web abierta hasta que empiece.</p>
+          </article>
+
+          <article class="step-card">
+            <div class="step-num">04</div>
+            <div class="step-shot">
+              <img src="assets/paso-4-espera.webp" alt="Pantalla de espera: píxel sincronizado y aviso de mantener la pantalla abierta" loading="lazy">
+            </div>
+            <h3>Espera la señal</h3>
+            <p>Tu móvil queda sincronizado con el resto del estadio. Cuando arranque el show, todos encienden a la vez.</p>
+          </article>
+        </div>
+
+        <p class="section-note">
+          <strong>¿Y la sincronización?</strong> Antes del show, los móviles ajustan su reloj con una referencia común. Así, todos cambian de color en el mismo instante, con precisión de milisegundos.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========================= FUNCIONAMIENTO ========================= -->
+    <section id="show" class="section-padding section-alt">
+      <div class="container">
+        <div class="section-head">
+          <span class="pill">FUNCIONAMIENTO</span>
+          <h2>Miles de espectadores sincronizados desde un cuadro de mandos</h2>
+        </div>
+
+        <div class="show-layout">
+          <article class="show-panel show-spectator">
+            <div class="show-panel-head">
+              <span class="show-kicker">A nivel de dispositivo</span>
+              <h3>En tu móvil</h3>
+              <p>Un recorrido sencillo: entras, te preparas y tu pantalla se enciende con todos.</p>
+            </div>
+
+            <div class="phone-visual">
+              <video class="lazy-video" src="assets/clip-cuenta-atras.mp4" poster="assets/poster-cuenta-atras.webp" autoplay muted loop playsinline preload="auto" aria-label="Cuenta atrás de colores en la pantalla del móvil"></video>
+            </div>
+
+            <ul class="show-outcomes">
+              <li>Un QR y ya estás dentro, sin instalar nada.</li>
+              <li>Tu móvil queda listo y sincronizado antes del show.</li>
+              <li>La cuenta atrás reúne a todos en el mismo instante.</li>
+              <li>Tu pantalla se enciende con el color que toca.</li>
+            </ul>
+          </article>
+
+          <article class="show-panel show-operator">
+            <div class="show-panel-head">
+              <span class="show-kicker">A nivel de orquestador</span>
+              <h3>En el cuadro de mandos</h3>
+              <p>Una vista para todo el estadio. Cambias la idea y la grada entera responde.</p>
+            </div>
+
+            <div class="console-visual">
+              <img class="scroll-gif" src="assets/poster-consola-anim.webp" data-still="assets/poster-consola-anim.webp" data-anim="assets/consola.webp" alt="Cuadro de mandos controlando la iluminación de todo el estadio" loading="lazy">
+            </div>
+
+            <ul class="show-outcomes">
+              <li>Todo el estadio de un vistazo.</li>
+              <li>Un gesto cambia la grada entera.</li>
+              <li>El momento exacto, en manos de una sola persona.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= VENTAJAS ========================= -->
+    <section id="ventajas" class="section-padding">
+      <div class="container">
+        <div class="section-head">
+          <span class="pill">VENTAJAS</span>
+          <h2>Lo que no hace falta para conseguirlo</h2>
+          <p>Sin cartulinas ni pulseras: la pantalla ya está en manos de todos.</p>
+        </div>
+
+        <div class="compare-grid">
+          <article class="compare-card old">
+            <span class="compare-tag red">Mosaicos de cartulina</span>
+            <h3>Un solo uso</h3>
+            <ul class="compare-list">
+              <li><span class="icon bad">✕</span> Imagen estática durante todo el partido.</li>
+              <li><span class="icon bad">✕</span> Hay que repartir y colocar cada pieza.</li>
+              <li><span class="icon bad">✕</span> Coste de producción y logística en cada evento.</li>
+              <li><span class="icon bad">✕</span> Genera residuos al terminar.</li>
+            </ul>
+          </article>
+
+          <article class="compare-card old">
+            <span class="compare-tag red">Pulseras LED desechables</span>
+            <h3>Hardware por unidad</h3>
+            <ul class="compare-list">
+              <li><span class="icon bad">✕</span> Una pulsera para cada persona.</li>
+              <li><span class="icon bad">✕</span> Plástico y baterías que gestionar.</li>
+              <li><span class="icon bad">✕</span> No son reutilizables en próximos eventos.</li>
+            </ul>
+          </article>
+
+          <article class="compare-card fg">
+            <span class="compare-tag neon">FANS GRID</span>
+            <h3>El móvil que ya llevas encima</h3>
+            <ul class="compare-list">
+              <li><span class="icon good">✓</span> Cero hardware extra: usa la pantalla del espectador.</li>
+              <li><span class="icon good">✓</span> Dinámico: cambia de imagen las veces que quieras.</li>
+              <li><span class="icon good">✓</span> Reutilizable infinitamente y sin residuos físicos.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= CONTROL Y MONITORIZACIÓN ========================= -->
+    <section id="consola" class="section-padding section-alt">
+      <div class="container">
+        <div class="section-head">
+          <span class="pill pill-keep-case">CONTROL y MONITORIZACIÓN</span>
+          <h2>Una mesa para dirigir toda la grada</h2>
+          <p>Desde un solo lugar se prepara y se lanza cada coreografía.</p>
+        </div>
+
+        <div class="console-layout">
+          <div class="console-visual console-large">
+            <img class="scroll-gif" src="assets/poster-consola-anim.webp" data-still="assets/poster-consola-anim.webp" data-anim="assets/consola.webp" alt="Cuadro de mandos con todo el estadio representado en pantalla" loading="lazy">
+          </div>
+
+          <div class="console-text">
+            <h3>Todo el estadio, en una pantalla</h3>
+            <p>En el prototipo, la herramienta representa la grada entera y permite vestirla de color en directo. Lo que ves aquí es el resultado, no el proceso.</p>
+            <ul class="console-features">
+              <li>El conjunto de la grada de un vistazo.</li>
+              <li>Cambios de imagen al instante.</li>
+              <li>El momento exacto, en manos de quien dirige.</li>
+              <li>Calibración para sincronización.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= MODELADO ========================= -->
+    <section id="estadio" class="section-padding">
+      <div class="container">
+        <div class="section-head">
+          <span class="pill">MODELADO</span>
+          <h2>Cualquier estadio puede ser el lienzo</h2>
+          <p>El prototipo se ha desarrollado en La Cartuja; la misma idea funciona en cualquier recinto.</p>
+        </div>
+
+        <div class="stadium-layout">
+          <div class="stadium-render">
+            <video class="lazy-video" src="assets/clip-blender.mp4" poster="assets/poster-blender.webp" autoplay muted loop playsinline preload="auto" aria-label="Render animado del estadio con una ola de luz recorriendo las gradas"></video>
+          </div>
+
+          <div class="stadium-info">
+            <h3>La misma idea en cualquier grada</h3>
+            <p>Lo que ves en el render es el resultado visual: la grada entera convirtiéndose en una sola imagen. Nos adaptamos al estadio concreto para dar simulaciones previas.</p>
+
+            <div class="stadium-map">
+              <img src="assets/cartuja-map.webp" alt="Vista cenital del Estadio de La Cartuja" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <div class="stadium-callout">
+          <p class="stadium-callout-lead">Estrenemos estadio y estrenemos eventos luminosos.</p>
+          <p>El nuevo estadio del Real Betis tiene que tener una nueva forma de crear ambiente. Desarrollamos y probamos el concepto en La Cartuja para llegar al Benito Villamarín con una herramienta funcional.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= EQUIPO ========================= -->
+    <section id="equipo" class="section-padding section-alt">
+      <div class="container">
+        <div class="section-head">
+          <span class="pill">EQUIPO</span>
+          <h2>Quienes lo imaginan y lo construyen</h2>
+          <p>Cuatro personas detrás de esta propuesta.</p>
+        </div>
+
+        <div class="team-grid" id="team-grid-container"></div>
+
+      </div>
+    </section>
+
+    <!-- ========================= CONTACTO ========================= -->
+    <section id="contacto" class="section-padding">
+      <div class="container">
+        <div class="contact-box">
+          <img class="contact-mark" src="assets/fansgrid-mark.png" alt="" width="48" height="49">
+          <span class="contact-brand">FANS <b>GRID</b></span>
+          <span class="pill">CONTACTO</span>
+          <h2>¿Quieres saber más? Escríbenos.</h2>
+
+          <div class="contact-email-row">
+            <a class="contact-email" href="mailto:admin@fans-grid.es">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              admin@fans-grid.es
+            </a>
+            <button class="copy-btn" id="copy-email" type="button">Copiar correo</button>
+          </div>
+
+          <p class="contact-meta">Sevilla, España · Proyecto FANS GRID</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================= FOOTER ========================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="#hero" class="brand" aria-label="FANS GRID, volver al inicio">
+            <img class="brand-wordmark" src="assets/fansgrid-wordmark.png" alt="" width="120" height="112">
+            <span class="brand-name">FANS <b>GRID</b></span>
+          </a>
+          <p>Un proyecto innovador para convertir la grada en pantalla. Sin apps, sin hardware, sin residuos.</p>
+        </div>
+
+        <nav class="footer-nav" aria-label="Enlaces del pie de página">
+          <div class="footer-col">
+            <h3>Proyecto</h3>
+            <ul>
+              <li><a href="#concepto">Idea</a></li>
+              <li><a href="#show">Funcionamiento</a></li>
+              <li><a href="#ventajas">Ventajas</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3>Prototipo</h3>
+            <ul>
+              <li><a href="#consola">Control y monitorización</a></li>
+              <li><a href="#estadio">Modelado</a></li>
+              <li><a href="#equipo">Equipo</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3>Contacto</h3>
+            <ul>
+              <li><a href="mailto:admin@fans-grid.es">admin@fans-grid.es</a></li>
+              <li><a href="#contacto">Sevilla, España</a></li>
+              <li><a href="#hero">Volver arriba ↑</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 FANS GRID. Proyecto presentado como propuesta tecnológica.</span>
+        <span>Hecho en la Ciudad del Betis</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/team-config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
