@@ -1,0 +1,22 @@
+# Sistema operativo y editores
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
+.idea/
+.vscode/
+
+# Entornos y secretos
+.env
+.env.*
+*.local
+
+# Dependencias y builds (por si se añaden herramientas más adelante)
+node_modules/
+dist/
+build/
+*.log
+
+# Temporales de validación de la web
+__*.html
