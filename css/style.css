@@ -441,6 +441,60 @@ section[id] { scroll-margin-top: 88px; }
   background: var(--lime); box-shadow: var(--glow-sm);
 }
 
+/* --- Coreografías de ejemplo (vídeos de la grada) --- */
+.choreo-block {
+  margin-top: 3.5rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--border);
+}
+.choreo-head {
+  text-align: center; max-width: 700px; margin: 0 auto 2.5rem;
+}
+.choreo-head h3 {
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  font-weight: 400; margin-top: .7rem;
+}
+.choreo-head p {
+  color: var(--text-2); font-size: .95rem; margin-top: .5rem;
+}
+.choreo-grid {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.6rem;
+}
+.choreo-card {
+  background: var(--bg-deep);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: .8rem .8rem 1.3rem;
+  min-width: 0;
+  transition: transform .25s var(--ease), border-color .25s;
+}
+.choreo-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-neon);
+}
+.choreo-media {
+  border-radius: var(--r-md);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #000;
+  margin-bottom: 1rem;
+}
+.choreo-media video {
+  width: 100%; display: block;
+  aspect-ratio: 2 / 1;
+  object-fit: cover;
+  object-position: center;
+  background: #050705;
+}
+.choreo-card h4 {
+  font-size: 1rem; font-weight: 700; margin-bottom: .3rem;
+}
+.choreo-card p {
+  font-size: .82rem; color: var(--text-2);
+}
+
 /* =====================================================================
    COMPARATIVA (alternativas tradicionales)
    ===================================================================== */
@@ -514,20 +568,7 @@ section[id] { scroll-margin-top: 88px; }
   display: grid; grid-template-columns: 1.2fr 1fr;
   gap: 2.5rem; align-items: center;
 }
-.stadium-render {
-  border-radius: var(--r-lg);
-  overflow: hidden;
-  border: 1px solid var(--border);
-  box-shadow: 0 15px 40px rgba(0,0,0,.5);
-}
-.stadium-render img,
-.stadium-render video {
-  width: 100%; display: block;
-  aspect-ratio: 720 / 512; object-fit: contain;
-  background: #080a06;
-}
 .stadium-map {
-  margin-top: 1.4rem;
   border-radius: var(--r-md);
   overflow: hidden;
   border: 1px solid var(--border);
@@ -732,6 +773,7 @@ section[id] { scroll-margin-top: 88px; }
 @media (max-width: 1024px) {
   .steps-row          { grid-template-columns: repeat(2, 1fr); }
   .show-layout        { grid-template-columns: 1fr; }
+  .choreo-grid        { grid-template-columns: 1fr; }
   .compare-grid       { grid-template-columns: 1fr; }
   .console-layout     { grid-template-columns: 1fr; }
   .stadium-layout     { grid-template-columns: 1fr; }
