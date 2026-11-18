@@ -65,6 +65,10 @@ section[id] { scroll-margin-top: 88px; }
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
+.vision-section {
+  background: var(--bg-dark);
+  border-top: 1px solid var(--border);
+}
 
 /* --- Grid background --- */
 .bg-grid {
@@ -581,7 +585,7 @@ section[id] { scroll-margin-top: 88px; }
   font-size: 1.8rem; margin-bottom: .8rem;
 }
 .stadium-info p { color: var(--text-2); font-size: .95rem; margin-bottom: .8rem; }
-.stadium-callout {
+.vision-box {
   margin-top: 2.5rem;
   padding: 1.8rem 2rem;
   background: var(--bg-surface);
@@ -589,14 +593,14 @@ section[id] { scroll-margin-top: 88px; }
   border-left: 3px solid var(--lime);
   border-radius: var(--r-md);
 }
-.stadium-callout-lead {
+.vision-lead {
   font-family: var(--serif);
   font-size: clamp(1.5rem, 3vw, 2.1rem);
   line-height: 1.15;
   color: var(--text);
   margin-bottom: .6rem;
 }
-.stadium-callout p:last-child {
+.vision-box p:last-child {
   color: var(--text-2);
   font-size: 1rem; line-height: 1.6;
   max-width: 780px;
