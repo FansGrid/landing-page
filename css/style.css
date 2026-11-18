@@ -607,6 +607,114 @@ section[id] { scroll-margin-top: 88px; }
 }
 
 /* =====================================================================
+   PoC — PRUEBA DE CONCEPTO
+   ===================================================================== */
+.poc-lead {
+  font-family: var(--serif);
+  font-size: clamp(1.3rem, 2.8vw, 1.9rem);
+  line-height: 1.2;
+  text-align: center;
+  color: var(--text);
+  margin-bottom: .5rem;
+}
+.poc-copy {
+  color: var(--text-2);
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 2.5rem;
+}
+.poc-carousel {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.poc-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  background: #0a0c07;
+}
+.poc-track::-webkit-scrollbar { display: none; }
+.poc-track:focus-visible { outline: 2px solid var(--lime); outline-offset: 3px; }
+.poc-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  margin: 0;
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.poc-slide img,
+.poc-slide video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.poc-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: var(--r-full);
+  background: rgba(14, 17, 11, .85);
+  border: 1px solid var(--border-mid);
+  color: var(--text);
+  font-size: 1.9rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: background .2s, border-color .2s;
+}
+.poc-arrow:hover {
+  background: var(--bg-raised);
+  border-color: var(--lime);
+}
+.poc-arrow:focus-visible { outline: 2px solid var(--lime); outline-offset: 2px; }
+.poc-prev { left: .75rem; }
+.poc-next { right: .75rem; }
+.poc-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .25rem;
+  margin-top: 1.1rem;
+}
+.poc-dot {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+.poc-dot::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: var(--r-full);
+  background: var(--text-dim);
+  transition: background .2s, transform .2s var(--ease);
+}
+.poc-dot:hover::before { background: var(--text-2); }
+.poc-dot.is-active::before {
+  background: var(--lime);
+  transform: scale(1.35);
+}
+.poc-dot:focus-visible { outline: 2px solid var(--lime); outline-offset: 1px; }
+
+/* =====================================================================
    EQUIPO
    ===================================================================== */
 .team-grid {
@@ -805,4 +913,13 @@ section[id] { scroll-margin-top: 88px; }
   .brand-name { font-size: .9rem; letter-spacing: .16em; }
   .hero-brand { letter-spacing: .26em; }
   .contact-brand { font-size: 1.25rem; letter-spacing: .16em; }
+  .poc-arrow { width: 38px; height: 38px; font-size: 1.6rem; }
+  .poc-prev { left: .4rem; }
+  .poc-next { right: .4rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .poc-track { scroll-behavior: auto; }
+  .poc-arrow, .poc-dot::before { transition: none; }
 }

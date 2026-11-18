@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCopyEmail();
   initLazyVideos();
   initScrollGifs();
+  initPocCarousel();
 });
 
 /* -------------------------------------------------------------------------
@@ -160,6 +161,142 @@ function initScrollGifs() {
   }, { rootMargin: '60px', threshold: 0.2 });
 
   images.forEach((img) => observer.observe(img));
+}
+
+/* -------------------------------------------------------------------------
+ * Carrusel de la prueba de concepto (PoC)
+ * Avanza solo, se pausa al interactuar o al salir de pantalla y mantiene
+ * el vídeo silenciado en todo momento.
+ * ------------------------------------------------------------------------- */
+function initPocCarousel() {
+  const carousel = document.getElementById('poc-carousel');
+  const track = document.getElementById('poc-track');
+  const dotsBox = document.getElementById('poc-dots');
+  if (!carousel || !track || !dotsBox) return;
+
+  const slides = Array.from(track.querySelectorAll('.poc-slide'));
+  const video = track.querySelector('video');
+  const total = slides.length;
+  if (!total) return;
+
+  const prev = carousel.querySelector('.poc-prev');
+  const next = carousel.querySelector('.poc-next');
+  const reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const INTERVAL = 5000;
+
+  let index = 0;
+  let timer = null;
+  let scrollTimer = null;
+
+  if (video) {
+    video.muted = true;
+    video.volume = 0;
+  }
+
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.type = 'button';
+    dot.className = 'poc-dot' + (i === 0 ? ' is-active' : '');
+    dot.setAttribute('aria-label', `Ver imagen ${i + 1} de ${total}`);
+    if (i === 0) dot.setAttribute('aria-current', 'true');
+    dot.addEventListener('click', () => { goTo(i); restart(); });
+    dotsBox.appendChild(dot);
+  });
+  const dots = Array.from(dotsBox.querySelectorAll('.poc-dot'));
+
+  function update() {
+    slides.forEach((slide, i) => slide.classList.toggle('is-active', i === index));
+    dots.forEach((dot, i) => {
+      const active = i === index;
+      dot.classList.toggle('is-active', active);
+      if (active) dot.setAttribute('aria-current', 'true');
+      else dot.removeAttribute('aria-current');
+    });
+
+    if (video) {
+      if (slides[index].contains(video)) {
+        video.muted = true;
+        video.volume = 0;
+        const attempt = video.play();
+        if (attempt && typeof attempt.catch === 'function') attempt.catch(() => {});
+      } else {
+        video.pause();
+      }
+    }
+  }
+
+  function goTo(position) {
+    index = (position + total) % total;
+    track.scrollTo({
+      left: index * track.clientWidth,
+      behavior: reducedMotion ? 'auto' : 'smooth'
+    });
+    update();
+  }
+
+  function stop() {
+    if (timer) {
+      clearInterval(timer);
+      timer = null;
+    }
+  }
+
+  function start() {
+    if (!timer) timer = setInterval(() => goTo(index + 1), INTERVAL);
+  }
+
+  function restart() {
+    stop();
+    start();
+  }
+
+  // El swipe y el scroll nativo también cambian la diapositiva activa.
+  track.addEventListener('scroll', () => {
+    clearTimeout(scrollTimer);
+    scrollTimer = setTimeout(() => {
+      const next = Math.round(track.scrollLeft / (track.clientWidth || 1));
+      if (next !== index && next >= 0 && next < total) {
+        index = next;
+        update();
+        restart();
+      }
+    }, 120);
+  }, { passive: true });
+
+  if (prev) prev.addEventListener('click', () => { goTo(index - 1); restart(); });
+  if (next) next.addEventListener('click', () => { goTo(index + 1); restart(); });
+
+  track.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowRight') {
+      event.preventDefault();
+      goTo(index + 1);
+      restart();
+    } else if (event.key === 'ArrowLeft') {
+      event.preventDefault();
+      goTo(index - 1);
+      restart();
+    }
+  });
+
+  // Pausa al pasar el ratón, al enfocar y cuando sale de la vista.
+  carousel.addEventListener('mouseenter', stop);
+  carousel.addEventListener('mouseleave', start);
+  carousel.addEventListener('focusin', stop);
+  carousel.addEventListener('focusout', (event) => {
+    if (!carousel.contains(event.relatedTarget)) start();
+  });
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) start();
+      else stop();
+    }, { threshold: 0.25 });
+    observer.observe(carousel);
+  } else {
+    start();
+  }
+
+  update();
 }
 
 /* -------------------------------------------------------------------------
