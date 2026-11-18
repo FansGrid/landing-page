@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Sergio León: avatar con gafas futuristas y camiseta de rayas verde y blanca">
+  <defs>
+    <clipPath id="body"><path d="M20 200c0-41 35-63 80-63s80 22 80 63z"/></clipPath>
+  </defs>
+  <circle cx="100" cy="100" r="99" fill="#1d2017"/>
+  <g stroke="#39ff14" stroke-opacity=".07" stroke-width="1">
+    <path d="M0 55h200M0 100h200M0 145h200M55 0v200M100 0v200M145 0v200"/>
+  </g>
+  <g clip-path="url(#body)">
+    <rect x="18" y="135" width="164" height="66" fill="#f4f4ed"/>
+    <g fill="#39ff14">
+      <rect x="26" y="135" width="9" height="66"/><rect x="44" y="135" width="9" height="66"/>
+      <rect x="62" y="135" width="9" height="66"/><rect x="80" y="135" width="9" height="66"/>
+      <rect x="98" y="135" width="9" height="66"/><rect x="116" y="135" width="9" height="66"/>
+      <rect x="134" y="135" width="9" height="66"/><rect x="152" y="135" width="9" height="66"/>
+      <rect x="170" y="135" width="9" height="66"/>
+    </g>
+  </g>
+  <path d="M20 200c0-41 35-63 80-63s80 22 80 63" fill="none" stroke="#0e110b" stroke-width="2" opacity=".5"/>
+  <path d="M84 139l16 13 16-13" fill="none" stroke="#0e110b" stroke-width="3" stroke-linecap="round"/>
+  <rect x="89" y="116" width="22" height="28" rx="9" fill="#d9ad85"/>
+  <circle cx="64" cy="88" r="6" fill="#e7c6a1"/><circle cx="136" cy="88" r="6" fill="#e7c6a1"/>
+  <ellipse cx="100" cy="84" rx="37" ry="40" fill="#e7c6a1"/>
+  <path d="M64 68c1-25 16-37 36-37s35 12 36 37c-7-9-13-13-19-10-11-9-33-6-53 10z" fill="#2c2a20"/>
+  <circle cx="87" cy="84" r="4.2" fill="#0e110b"/><circle cx="113" cy="84" r="4.2" fill="#0e110b"/>
+  <circle cx="88.5" cy="82.5" r="1.3" fill="#f4f4ed"/><circle cx="114.5" cy="82.5" r="1.3" fill="#f4f4ed"/>
+  <path d="M89 101q11 9 22 0" fill="none" stroke="#0e110b" stroke-width="3" stroke-linecap="round"/>
+  <g fill="#0e110b" fill-opacity=".45" stroke="#39ff14" stroke-width="2.5">
+    <rect x="70" y="76" width="27" height="17" rx="6"/>
+    <rect x="103" y="76" width="27" height="17" rx="6"/>
+    <path d="M97 83h6"/>
+  </g>
+  <path d="M76 85l4 4 7-9" fill="none" stroke="#39ff14" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#39ff14"><circle cx="113" cy="83" r="2"/><circle cx="119" cy="87" r="1.5"/><circle cx="108" cy="88" r="1.2"/></g>
+  <g transform="translate(60 170)">
+    <rect x="-9" y="-7" width="18" height="14" rx="2" fill="#0e110b" stroke="#39ff14" stroke-width="1.5"/>
+    <g stroke="#39ff14" stroke-width="1.5">
+      <path d="M-5-7v-4M0-7v-4M5-7v-4M-5 7v4M0 7v4M5 7v4"/>
+    </g>
+    <rect x="-4" y="-3" width="8" height="6" fill="#39ff14" opacity=".5"/>
+  </g>
+</svg>

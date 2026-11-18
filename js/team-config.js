@@ -13,7 +13,7 @@ window.FANSGRID_TEAM = [
     role: "Dirección del proyecto",
     bio: "Ingeniero Investigador en Robótica y Control Automático",
     linkedin: "https://es.linkedin.com/in/alvaro-garcia-lora",
-    avatar: "" // Opcional: ruta de foto (ej: "assets/alvaro.jpg"). Si se deja vacío, genera un avatar con sus iniciales.
+    avatar: "assets/avatar-alvaro.svg" // Avatar ilustrado: pelo rizado, antena de robot y volante.
   },
   {
     id: "sergio",
@@ -21,7 +21,7 @@ window.FANSGRID_TEAM = [
     role: "Desarrollo y validación",
     bio: "Ingeniero de Software Embebido",
     linkedin: "https://www.linkedin.com/in/sldoncel",
-    avatar: ""
+    avatar: "assets/avatar-sergio.svg"
   },
   {
     id: "baladron",
@@ -29,7 +29,7 @@ window.FANSGRID_TEAM = [
     role: "Arquitectura y full stack",
     bio: "Ingeniero Analista de Datos y Desarrollador de Videojuegos",
     linkedin: "https://es.linkedin.com/in/%C3%A1lvaro-baladr%C3%B3n-caballero-073339257",
-    avatar: ""
+    avatar: "assets/avatar-baladron.svg"
   },
   {
     id: "pepe",
@@ -37,6 +37,6 @@ window.FANSGRID_TEAM = [
     role: "Cloud y despliegue",
     bio: "Ingeniero de Cloud & DevOps",
     linkedin: "https://es.linkedin.com/in/pepepfoter15",
-    avatar: ""
+    avatar: "assets/avatar-pepe.svg"
   }
 ];
