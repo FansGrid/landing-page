@@ -17,7 +17,7 @@ Web de presentación del proyecto FANS GRID: los móviles del público sincroniz
 - Web estática sin frameworks: HTML, CSS y JavaScript puro. Se puede abrir `index.html` directamente desde el disco.
 - El equipo se edita solo en `js/team-config.js`; las tarjetas se generan automáticamente.
 - Los vídeos y el WebP animado están optimizados y se reproducen al entrar en pantalla.
-- La sección PoC muestra las fotos y el vídeo del primer evento en un carrusel automático y silenciado; el material original queda fuera del sitio publicado, en la carpeta `PoC/` junto a `landing-page/`.
+- La sección PoC muestra las fotos y el vídeo del primer evento en un carrusel automático y silenciado. Los cinco archivos de `assets/` son copias exactas de los originales de `PoC/` (junto a `landing-page/`), sin recortes ni recompresión; el vídeo se reproduce siempre con `muted` y volumen 0.
 - `CNAME` fija el dominio, `robots.txt` permite la indexación y `.nojekyll` evita transformaciones en GitHub Pages.
 - Tras cambios visuales, conviene revisar que `assets/` no contenga archivos sin usar.
 
